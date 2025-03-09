@@ -1,0 +1,159 @@
+.why-section {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #fff;
+}
+
+h1 {
+  font-family: "Kadwa", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wcontent {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.content {
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #f0f5e9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+  color: #555;
+}
+
+.content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 370px;
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 340px;
+  padding: 2rem;
+  background-color: rgba(228, 240, 176, 1);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Add Intersection Observer animations */
+.card.animate {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.card:nth-child(1).animate {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(2).animate {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(3).animate {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #2e7d32;
+}
+
+.card:hover h2,
+.card:hover strong,
+.card:hover p {
+  color: #fff;
+}
+
+.icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.card:hover .icon-wrapper svg {
+  fill: #fff;
+}
+
+.card h2 {
+  color: #2e7d32;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  font-family: "Kadwa", serif;
+  transition: color 0.3s ease;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+.card strong {
+  color: #2e7d32;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

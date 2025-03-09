@@ -1,0 +1,203 @@
+  input {
+      background: #ececec;
+      border: 0;
+      font-size: 1em;
+      width: 100%;
+      border-radius: 25px;
+      padding: 12px;
+      position: relative;
+      height: 40px;
+      color: #808080;
+      font-family: inherit;
+  }
+  
+  input::placeholder {
+      color: #808080;
+      opacity: 1;
+  }
+  
+  input:-ms-input-placeholder {
+      color: #808080;
+  }
+  
+  input::-ms-input-placeholder {
+      color: #808080;
+  }
+  
+  input.active {
+      animation: scanning 1s ease 0s 1;
+      background: linear-gradient(90deg, #02de0b 50%, #ececec 100%);
+      background-repeat: no-repeat;
+      background-position: -210px;
+      background-color: #ececec;
+  }
+  
+  @keyframes scanning {
+      0% {
+          background-position: 150px;
+      }
+      100% {
+          background-position: -210px;
+      }
+  }
+  #reveal {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 0;
+    background: linear-gradient(145deg, #72c0ff, #0070ca);
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+  }
+#reveal:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 75% 0;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+#reveal:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    transition: all 0.3s ease;
+}
+  
+  #reveal:disabled {
+      background: linear-gradient(145deg, #ced5e0, #757575) !important;
+      cursor: default;
+  }
+  
+  #reveal.open {
+      background: linear-gradient(145deg, #8ce88f, #009205);
+  }
+  
+  #reveal.open:before {
+    transform: rotate(225deg);
+    top: 13px;
+    background: white;
+}
+
+#reveal.open:after {
+    top: 16px;
+    background: #000;
+    width: 4px;
+    height: 4px;
+}
+  
+  #reveal span:before {
+      display: none;
+      font-family: inherit;
+  }
+  
+  #reveal:hover span:before {
+      content: "Show Password";
+      display: block;
+      position: absolute;
+      background: #4fa8ef;
+      top: -4.5em;
+      padding: 0.45em 0.5em;
+      left: -0.9em;
+      border-radius: 2px;
+      font-size: 0.85em;
+      color: #1d4c72;
+      min-height: 2.25em;
+  }
+  
+  #reveal:hover span:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 0.7em solid transparent;
+      border-top-color: #4fa8ef;
+      left: 0.7em;
+      top: -1.15em;
+  }
+  
+  #reveal.open:hover span:before {
+      content: "Hide Password";
+      background: #61cd64 !important;
+      color: #215d23;
+  }
+  
+  #reveal.open:hover span:after {
+      border-top-color: #61cd64;
+  }
+  
+  #reveal[disabled="disabled"]:hover span:before {
+      content: "Empty Password";
+      background: #b3b8c0 !important;
+      color: #4d4e51;
+  }
+  
+  #reveal[disabled="disabled"]:hover span:after {
+      border-top-color: #b3b8c0;
+  }
+  
+  #fakepass {
+      font-size: 1em;
+      width: 0%;
+      border-radius: 25px;
+      position: absolute;
+      background: #ececec;
+      z-index: 2;
+      height: 40px;
+      top: 0;
+      right: 0;
+      left: 0;
+      transition: all 1s ease 0s;
+      line-height: 40px;
+      text-indent: 10px;
+      overflow: hidden;
+      color: #808080;
+  }
+  
+  #fakepass.scan {
+      animation: scan-show 1s ease-out 0s 1;
+      width: 0%;
+      left: 0;
+  }
+  
+  @keyframes scan-show {
+      0% {
+          width: 100%;
+      }
+      100% {
+          width: 0%;
+      }
+  }
+  
+  @-moz-document url-prefix() {
+      #fakepass {
+          text-shadow: 0 0 2px #666, 0 0 2px #666, 0 0 2px #666, 0 0 2px #666,
+              0 0 2px #666, 0 0 2px #666, 0 0 2px #666, 0 0 2px #666;
+      }
+  }
+  
+  /* Update the input container positioning */
+  .form-group {
+      position: relative;
+      margin-bottom: 1rem;
+  }
+  
+  /* Ensure the input field has proper padding for the reveal button */
+  input[name="password"] {
+      padding-right: 50px;
+  }
+  

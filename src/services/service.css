@@ -1,0 +1,112 @@
+.services-section {
+    padding: 0rem 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: 1900px;
+    height: 500px;
+}
+
+.services-section h1 {
+    text-align: center;
+    font-family: 'Kadwa', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: black;
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.services-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+}
+
+.service-item {
+    background: linear-gradient(135deg, #f0f5e9 0%, #e8f3e0 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #1b5e20;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(46, 125, 50, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #e8f3e0 0%, #f0f5e9 100%);
+}
+
+.service-item.highlighted {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border: 2px solid #9c27b0;
+    color: #6a1b9a;
+}
+
+.service-item.green-text {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 2px solid #2e7d32;
+}
+
+.services-image {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.7s;
+}
+
+.services-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 968px) {
+    .services-list {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-item {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.service-item:nth-child(1) { animation-delay: 0.1s; }
+.service-item:nth-child(2) { animation-delay: 0.2s; }
+.service-item:nth-child(3) { animation-delay: 0.3s; }
+.service-item:nth-child(4) { animation-delay: 0.4s; }
+.service-item:nth-child(5) { animation-delay: 0.5s; }
+.service-item:nth-child(6) { animation-delay: 0.6s; }

@@ -1,0 +1,81 @@
+import React, { useState } from "react";
+import Intro from "../intro/intro";
+import Header from "../Header/header";
+import Choose from "../choose/whychoose";
+import Service from "../services/service";
+import Client from "../clientsays/clientsays";
+import Members from "../core members/members";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Drawer, FloatButton } from "antd";
+import { LikeOutlined } from "@ant-design/icons";
+import "./main.css";
+
+function Main() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [open, setOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  return (
+    <>
+      <Header />
+      <Intro />
+      <Choose />
+      <Service />
+      <Members />
+      {/* <Client /> */}
+      <button className="sticky-contact-btn" onClick={toggleModal}>
+        AI
+      </button>
+      <FloatButton
+        type="default"
+        icon={<LikeOutlined style={{ color: "white" }} />}
+        description="Survey"
+        onClick={() => setOpen(true)}
+        style={{
+          width: 80,
+          height: 80,
+          bottom: 94,
+          right: 24,
+          color: "white",
+        }}
+      />
+      <Drawer
+        title="Survey"
+        placement="right"
+        onClose={() => setOpen(false)}
+        open={open}
+        size="large"
+      >
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe32wAApxn2elqDZONgxelxlsK97ebcxrk-LQGQ_k3FDJ_kaw/viewform?embedded=true"
+          width="640"
+          height="2779"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+      </Drawer>
+      {/* {isModalOpen && (
+        <div className="modal-overlay" onClick={toggleModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={toggleModal}>
+              ×
+            </button>
+            <Contact />
+          </div>
+        </div>
+      )} */}
+      <div className="footer">
+        @ 2025 Cloud Crew Technologies. All rights are Reserved
+      </div>
+    </>
+  );
+}
+
+export default Main;

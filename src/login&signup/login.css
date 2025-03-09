@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  padding: 0px;
+  margin: 0px;
+  opacity: 0.3;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/signin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.login-card {
+  background: rgba(217, 217, 217, 0.59);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 634px;
+  min-height: 720.4px;
+  border: 3px solid transparent;
+  margin: 10px;
+  backdrop-filter: blur(5px);
+
+  border-image-source: linear-gradient(
+    150.04deg,
+    #ffffff 1.77%,
+    #d7d7d7 58.01%,
+    #ffffff 98.74%
+  );
+
+  border-image-slice: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: #006837;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 4px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: #666;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.btn-primary {
+  background: #006837;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #005229;
+}
+
+.social-btn {
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.5rem 0;
+}
+
+.social-btn:hover {
+  background: #f5f5f5;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+.link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: right;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Icon styles */
+.icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    margin: 1rem;
+    padding: 1.5rem;
+    min-height: auto;
+    width: 90%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  body,
+  html {
+    overflow-y: auto;
+  }
+
+  .container {
+    position: absolute;
+  }
+}
+
+@media (max-height: 800px) {
+  .login-card {
+    min-height: auto;
+    padding: 2rem;
+  }
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Add these new styles for the main content */
+.main-content {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+}
